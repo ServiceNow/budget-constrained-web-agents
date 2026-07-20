@@ -62,17 +62,17 @@ Running the full WebArena shopping set with Gemini 3 Flash:
 # ASI
 python run_online.py --experiment asi --website shopping \
     --model_name openrouter/google/gemini-3-flash-preview \
-    --max_steps 10 --run_suffix asi_shopping_flash3
+    --max_steps 10 --run_suffix run1
 
 # AWM
 python run_online.py --experiment awm --website shopping \
     --model_name openrouter/google/gemini-3-flash-preview \
-    --max_steps 10 --run_suffix awm_shopping_flash3
+    --max_steps 10 --run_suffix run2
 
 # Vanilla-IB (budget-matched baseline)
 python run_online.py --experiment vanilla --website shopping \
     --model_name openrouter/google/gemini-3-flash-preview \
-    --max_steps 15 --prune_axtree --run_suffix vanilla_ib_shopping_flash3
+    --max_steps 15 --prune_axtree --run_suffix run3
 ```
 
 ### 🧰 The `run.sh` launcher (optional)
@@ -93,7 +93,7 @@ python run_online.py --experiment vanilla --website shopping \
     --max_steps 10 --run_suffix run2
 ```
 
-Behavior is tunable with environment variables: `CLEANUP=`**`no`**`|delete|move`, `GENCONFIG=`**`1`**`|0`, `WARMUP=`**`1`**`|0`, `STATS=`**`1`**`|0`.
+Behavior is tunable with environment variables: `CLEANUP=no|delete|move`, `GENCONFIG=1|0`, `WARMUP=1|0`, `STATS=1|0`.
 
 ## 🩹 Troubleshooting
 
