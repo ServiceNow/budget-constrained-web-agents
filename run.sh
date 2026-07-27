@@ -2,10 +2,9 @@
 #
 # Simple launcher for the constbudg pipeline (constbudg/run_online.py).
 #
-# It assumes your WebArena sites are ALREADY hosted and their URLs are set in
-# `.env` (copy `.env.example` to `.env` first), and that the `constbudg` conda
-# env is already activated. This script loads your environment, optionally
-# (re)generates task configs and warms up the browser, runs `run_online.py`,
+# It assumes your WebArena sites are already hosted and their URLs are set in
+# `.env` (copy `.env.example` to `.env` first). This script loads your environment,
+# optionally (re)generates task configs and warms up the browser, runs `run_online.py`,
 # tees everything to a log file, and (optionally) writes a stats summary.
 #
 # Usage:

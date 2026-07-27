@@ -7,12 +7,9 @@ This repository contains the code for the paper
 
 ## 🛠️ Setup
 
-Create, then activate the conda environment:
+Install the following in your environment (we used `python==3.12`):
 
 ```bash
-conda create -n constbudg python=3.12
-conda activate constbudg
-
 pip install -r requirements.txt
 pip install --no-deps libwebarena==0.0.5
 playwright install chromium
@@ -77,7 +74,7 @@ python run_online.py --experiment vanilla --website shopping \
 
 ### 🧰 The `run.sh` launcher (optional)
 
-`run.sh` at the repo root is a convenience wrapper. It assumes your sites are already hosted, site URLs are set in `.env` and the `constbudg` conda env is already active, then: loads `.env`, optionally (re)generates task configs and runs a short throwaway warm-up so the first real task isn't slowed by cold browser/site startup, runs `run_online.py` while teeing all output to a log file, and on success, archives the run's artifacts to `warehouse/<log-name>/` with a `stats.txt` summary.
+`run.sh` at the repo root is a convenience wrapper. It assumes your sites are already hosted and site URLs are set in `.env`, then: loads `.env`, optionally (re)generates task configs and runs a short throwaway warm-up so the first real task isn't slowed by cold browser/site startup, runs `run_online.py` while teeing all output to a log file, and on success, archives the run's artifacts to `warehouse/<log-name>/` with a `stats.txt` summary.
 
 ```bash
 # ./run.sh <log_file> [run_online.py args...]
@@ -100,7 +97,7 @@ Behavior is tunable with environment variables: `CLEANUP=no|delete|move`, `GENCO
 **Playwright timeouts.** WebArena sites on slow backends can exceed BrowserGym's default 500 ms action timeout (e.g., `TimeoutError: Locator.click: Timeout 500ms exceeded`). BrowserGym does not expose this timeout as a parameter and it is hardcoded, so the only way to raise it is to edit the value in the installed package:
 
 ```bash
-BG_ACTION="$CONDA_PREFIX/lib/python3.12/site-packages/browsergym/core/action"
+BG_ACTION="<YOUR ENVIRONMENT PATH>/lib/python3.12/site-packages/browsergym/core/action"
 sed -i 's/timeout=500/timeout=4000/g' "$BG_ACTION/functions.py"
 sed -i 's/timeout=500/timeout=4000/g' "$BG_ACTION/utils.py"
 ```
