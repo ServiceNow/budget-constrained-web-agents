@@ -111,14 +111,11 @@ This codebase is based on the [Agent Skill Induction (ASI)](https://github.com/z
 If you use this code, please cite:
 
 ```bibtex
-@misc{hajimiri2026budget,
-      title={Are Online Skill and Memory Modules Always Worth Their Tokens? A Budget-Constrained Study of Web Agents}, 
-      author={Sina Hajimiri and Masih Aminbeidokhti and Jose Dolz and Ismail Ben Ayed and Issam H. Laradji and Spandana Gella and Nicolas Gontier},
-      year={2026},
-      eprint={2606.15017},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2606.15017}, 
+@inproceedings{hajimiri2026budget,
+  title     = {Are Online Skill and Memory Modules Always Worth Their Tokens? {A} Budget-Constrained Study of Web Agents},
+  author    = {Hajimiri, Sina and Aminbeidokhti, Masih and Dolz, Jose and Ben Ayed, Ismail and Laradji, Issam H. and Gella, Spandana and Gontier, Nicolas},
+  booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
+  year      = {2026},
 }
 ```
 
